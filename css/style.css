@@ -1,0 +1,604 @@
+:root{
+    --white: whitesmoke;
+    --orange: rgb(224, 159, 97);
+    --red: rgb(240, 139, 121);
+    --greyish: rgba(4, 10, 19, 0.918);
+    --second-nav: rgba(21, 36, 57, 0.918);
+    --font: #333;
+    --border: rgb(224, 224, 224);
+    --border_input: rgb(201, 198, 198);
+    --border_hover: rgb(250, 185, 65);
+    --button_shadow: rgb(253, 200, 143);
+    --button_hover: rgb(194, 135, 72);
+    --button_color: rgb(245, 210, 116);
+    --link: rgb(72, 72, 191);
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 3rem 3fr 3fr 3fr 6rem;
+    width: 100vw;
+    height: 100vh;
+    color: var(--font);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.logo-1{
+    grid-row: 1/2;
+    grid-column-start: 2;
+    margin-left: 8rem;
+    margin-top: 1rem;
+}
+
+.logo-2{
+grid-row-start: 4;
+grid-column-start: 2;
+margin-top: 3.5rem;
+margin-left: 8rem;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: 100fr 100fr 300fr 50fr 80fr 80fr;
+    grid-column: 1/5;
+   
+    padding: 0.4rem;
+    color: var(--white);
+    background-color: var(--greyish);
+}
+
+.second-menu{
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-row-start: 2;
+    grid-column: 1/5;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    height: 3.3rem;
+    padding: 0.5rem;
+    color: var(--white);
+    background-color: var(--second-nav);
+    font-size: 0.9rem;
+}
+
+.menu-login{
+    display: grid;
+    grid-template-columns: 100fr 100fr 300fr 60fr 60fr 60fr 60fr;
+    grid-column: 1/5;
+    padding: 0.4rem;
+    color: var(--white);
+    background-color: var(--greyish);
+}
+
+.link{
+    color: var(--white);
+}
+
+#search-input{
+    width: 88%;
+    height: 2rem;
+    padding-top: 0.2rem;
+    border-radius: 0.2rem;
+    border: 0.07rem transparent;
+}
+
+.log-in,
+.registering,
+.cart{
+    margin-top: 0.5rem;
+
+}
+
+.deliver{
+    width: 80%; 
+    padding-left: 1rem;
+}
+
+.cart{
+    padding-left: 1rem;
+    margin-left: 1rem;
+}
+
+.header{
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding-top: 0.2rem;
+    padding-left: 0.7rem;
+}
+
+.deliver,
+.log-in,
+.registering,
+.cart{
+    font-size: 0.9rem;
+}
+
+.items{
+    margin-left: 1.7rem;
+}
+
+.registering{
+    width: 90%;
+}
+
+.deliver:hover,
+.log-in:hover,
+.registering:hover,
+.cart:hover,
+.header:hover{
+border: 0.07rem solid var(--white);
+padding: 0.2rem;
+width: 70%;
+}
+
+.deliver:hover{
+    height: 2.5rem;
+}
+
+.all:hover,
+.customer-service:hover,
+.deals:hover,
+.registry:hover,
+.gift:hover,
+.sell:hover,
+.items:hover{
+border: 0.07rem solid var(--white);
+width: 60%;
+}
+
+.all:hover{
+    width: 50%;
+}
+
+.all{
+    margin-left: 1rem;
+}
+
+
+.items{
+    padding-top: 0.5rem;
+}
+
+/* content */
+
+.sign-up{
+    grid-row: 2/6;
+    grid-column-start: 2;
+    border: 0.07rem solid var(--border);
+    border-radius: 0.3rem;
+    padding: 1.4rem;
+    width: 85%;
+    margin: 1rem 1.7rem;
+    height: 95%;
+}
+
+.login-1{
+    grid-row: 2/5;
+    grid-column-start: 2;
+    border: 0.07rem solid var(--border);
+    border-radius: 0.3rem;
+    padding: 1.4rem;
+    width: 85%;
+    margin: 1rem 1.7rem;
+    height: 85%;
+}
+
+.form-pass{
+        grid-row: 2/5;
+        grid-column-start: 2;
+        border: 0.07rem solid var(--border);
+        border-radius: 0.3rem;
+        padding: 1.4rem;
+        width: 85%;
+        margin: 1rem 1.7rem;
+        height: 80%;
+}
+
+.reset-pass{
+    grid-row: 2/5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border: 0.07rem solid var(--border);
+    border-radius: 0.3rem;
+    padding: 1.4rem;
+    margin: 1rem 1.7rem;
+    height: 60%;
+}
+
+.form,
+.form-update{   
+        grid-row: 2/6;
+        grid-column-start: 2;
+        border: 0.07rem solid var(--border);
+        border-radius: 0.3rem;
+        padding: 1.4rem;
+        width: 85%;
+        margin: 1rem 1.7rem;
+        height: 60%;
+    }
+
+    .update-info{
+        grid-row: 3/4;
+        grid-column-start: 2;
+        border: 0.07rem solid var(--border);
+        border-radius: 0.3rem;
+        padding: 1.7rem;
+        width: 85%;
+        margin: 1rem 1.7rem;
+        height: 80%;
+    }
+
+.email-sent{
+    grid-row: 3/5;
+    grid-column: 2/3;
+    padding: 1.4rem;
+    margin: 0.5rem 0;
+    
+}
+
+.confirm{
+    grid-row: 3/5;
+    grid-column: 2/3;
+    padding: 1.4rem;
+    margin: 0.5rem 0;
+    
+}
+
+.change{
+    grid-row: 3/5;
+    grid-column: 2/3;
+    padding: 1.4rem;
+    margin: 0.5rem 0;
+    
+}
+
+.deleted{
+    grid-row: 3/5;
+    grid-column: 2/3;
+    padding: 1.4rem;
+    margin: 0.5rem 0;
+}
+
+.inbox{
+    margin-top: 2rem;
+}
+
+.form-pass{
+    grid-row: 2/5;
+    grid-column-start: 2;
+    border: 0.07rem solid var(--border);
+    border-radius: 0.3rem;
+    padding: 1.4rem;
+    width: 85%;
+    margin: 0.5rem 1.7rem;
+    height: 80%;
+}
+
+
+form{
+    margin-top: 1.3rem;
+    margin-left: 0.5rem;
+    line-height: 1.3rem;
+}
+
+form label,
+form input{
+  display: grid;
+}
+
+form label{
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+form input{
+  margin-bottom: 0.7rem;
+  width: 98%;
+  height: 1.8rem;
+  border-radius: 0.2rem;
+  border: 0.09rem solid var(--border_input);
+  padding: 0.5rem;
+}
+
+form input:hover{
+    box-shadow: 1px 1px 4px var(--border_hover);
+    border: 0.09rem solid var(--border_hover);
+}
+
+h2{
+    margin-left: 0.5rem;
+}
+
+.require{
+    font-size: 0.8rem;
+}
+
+button{
+    width: 98%;
+    height: 2rem;
+    border-radius: 0.3rem;
+    border: 0.05rem solid var(--font);
+    background-color: var(--button_color);
+    padding: 0.4rem;
+    box-shadow: 4px 7px 4px var(--button_shadow) inset;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 4px 7px 4px var(--button_shadow) inset;
+    background-color: var(-button_hover);
+}
+
+.terms{
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.forgot{
+    margin-top: 3rem;
+}
+
+.link-pass{
+    margin-top: 1.3rem;
+    color: var(--link);
+}
+
+.divide{
+    width: 100%;
+    height: 3rem;
+    border-top: 0.2rem solid rgb(223, 223, 223);
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.login{
+    text-decoration: none;
+    color: var(--link);
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+}
+
+.terms,
+.terms-2,
+.divide,
+.login{
+    font-weight: bold;
+}
+
+.password{
+    color: var(--link);
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--font);
+}
+
+.divide-1{
+    display: grid;
+    grid-row-start: 5;
+    grid-column-start: 2;
+}
+
+
+.border{
+    text-align: center;
+}
+
+.send{
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.register{
+    background-color: rgb(235, 235, 235);
+    box-shadow: 4px 7px 4px rgb(226, 226, 226) inset;
+    border: 0.05rem solid rgb(113, 113, 113);
+    margin-left: 2rem;
+    width: 83%;
+}
+
+.register:hover{
+    background-color: rgb(208, 203, 203);
+    box-shadow: 4px 7px 4px rgb(226, 226, 226) inset;
+}
+
+.create{
+    text-decoration: none;
+    color: var(--font);
+}
+
+.success{
+    margin-bottom: 2rem;
+}
+
+.inbox{
+    margin-left: 0.5rem;
+}
+
+.upload{
+    display: grid;
+    grid-row: 3/5;
+    grid-column-start: 2;
+}
+
+/* the items */
+
+.first-row,
+.second-row,
+.third-row,
+.fourth-row,
+.fifth-row,
+.sixth-row,
+.seventh-row,
+.upload{
+    display: grid;
+    border: 0.07rem solid var(--border);
+    padding: 1rem;
+    margin: 4rem;
+    width: 70%;
+    height: 90%;
+}
+
+.first-row{
+grid-row: 2/3;
+grid-column: 1/2;
+}
+
+.second-row{
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+.third-row{
+    grid-row: 2/3;
+    grid-column: 3/4;
+}
+
+.fourth-row{
+    grid-row: 3/4;
+    grid-column: 1/2;
+}
+
+.fifth-row{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+.sixth-row{
+    grid-row: 3/4;
+    grid-column: 3/4;
+}
+
+.seventh-row{
+grid-row: 4/5;
+grid-column: 1/2;
+}
+
+.upload{
+    grid-row: 4/5;
+    grid-column: 2/4;
+    width: 85%;
+}
+
+.footer{
+    display: grid;
+    grid-row: 6/7;
+    grid-column: 1/4;
+    background-color: var(--greyish);
+    padding: 0.5rem;
+}
+
+.footer p{
+    text-align: center;
+    color: var(--white);
+    font-size: 0.8rem;
+}
+
+.upload p{
+    margin: auto;
+}
+
+.add{
+    width: 30%;
+    margin: auto;
+}
+
+.product{
+    font-size: 1rem;
+}
+
+.picture{
+    display: grid;
+    margin: auto;
+    padding: 1rem;
+}
+
+.content-1{
+    display: grid;
+    grid-template-columns: 100fr 100fr 100fr;
+    grid-column: 1/5;
+    padding: 0.4rem;
+    margin-bottom: 3rem;
+}
+
+.item-1,
+.item-2,
+.item-3{
+    border: 0.07rem solid var(--border);
+    padding: 1rem;
+    margin: 2rem;
+    width: 60%;
+    height: 80%;
+}
+
+.create-account{
+    border: 0.07rem solid var(--border);
+    height: 35%;
+    width: 50%;
+    margin: 2rem;
+    padding: 1rem;
+    line-height: 2rem;
+}
+
+.content-2{
+        display: grid;
+        grid-template-columns: repeat(5,100fr);
+        grid-column: 1/5;
+        padding: 0.4rem;
+        margin: 1rem;
+}
+
+.img{
+    margin: 1rem;
+}
+
+.img-1{
+    margin: 0.5rem;
+}
+
+.index-title{
+    margin-bottom: 1rem;
+}
+
+.seemore{
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--link);
+}
+
+.content-3{
+    display: grid;
+        grid-template-columns: repeat(3,100fr);
+        grid-column: 1/5;
+        padding: 0.4rem;
+        margin: 0.5rem;
+}
+
+.welcome{
+    font-size: 1.2rem;
+}
+
+.create-account2{
+    border: 0.07rem solid var(--border);
+    height: 40%;
+    width: 50%;
+    margin: 2rem;
+    padding: 1rem;
+    line-height: 2rem;
+}
