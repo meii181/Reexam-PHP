@@ -2,6 +2,7 @@
 
 require_once("globals.php");
 session_start();
+
 if(isset($_POST["submit-item"])){
 
 if (!isset($_POST["name"])){

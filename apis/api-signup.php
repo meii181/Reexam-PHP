@@ -63,7 +63,6 @@ try{
     $hash = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
     $verification_key = bin2hex(random_bytes(16));
     $forgotten_password_key = bin2hex(random_bytes(16));
-    $authentication_key = bin2hex(random_bytes(5));
     $lang = $_GET["lang"] ?? "en";
     
 
