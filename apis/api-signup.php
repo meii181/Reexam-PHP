@@ -80,7 +80,7 @@ try{
 
     } else {
         $q = $db->prepare("INSERT INTO customers VALUES(:user_id, :user_name, :user_last_name, :user_email, 
-        :user_password, :verification_key, :forgotten_password, :verified_user, :user_phone, :authentication_key)");
+        :user_password, :verification_key, :forgotten_password, :verified_user)");
         
         $q->bindValue(":user_id", null);
         $q->bindValue(":user_name", $_POST["name"]);
@@ -90,8 +90,6 @@ try{
         $q->bindValue(":verification_key", $verification_key);
         $q->bindValue(":forgotten_password", $forgotten_password_key);
         $q->bindValue(":verified_user", false);
-        $q->bindValue(":user_phone", null);
-        $q->bindValue(":authentication_key", $authentication_key);
         $q->execute();
 
         $id = $db->lastInsertId();
