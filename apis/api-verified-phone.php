@@ -26,11 +26,13 @@ if(isset($_POST["submit_phone"])){
 }
 
 try{
+
     $db = _db();
 
-    $id = $_SESSION["user_id"];
+    $phone_id = bin2hex(random_bytes(5));
+    $phone_verification_key = bin2hex(random_bytes(16));
 
-    $q = $db->prepare("SELECT * FROM customers WHERE user_phone = :user_phone");
+    $q = $db->prepare("SELECT * FROM mobile_phone WHERE phone_number = :phone_number");
     $q->bindValue(":user_phone", $_POST["phone"]);
     $q->execute();
     $row = $q->fetch();
@@ -41,23 +43,20 @@ try{
 
     } else {
         
-    $q = $db->prepare("SELECT * FROM customers WHERE user_id = :user_id");
-    $q->bindValue(":user_id", $id);
+    $q = $db->prepare("INSERT INTO mobile_phone VALUES (:phone_id, :phone_number, :phone_verification_key, :verified_phone");
+    $q->bindValue(":phone_id", $phone_id);
+    $q->bindValue(":phone_number", $_POST["phone"]);
+    $q->bindValue(":phone_verification_key", $phone_verification_key);
+    $q->bindValue(":verified_phone", false);
     $q->execute();
-    $row = $q->fetch();
-    
-    $authentication_key = $row["authentication_key"];
 
-    
     $to_phone = $_POST["phone"];
-    $sms_message = "Welcome, here is your OTP: " . $authentication_key;
+    $sms_message = "Welcome, here you can verify your phone number: <a href='http://localhost/reexam/apis/api-validate-phone.php?verification_key=$phone_verification_key>Tap here!</a>";
 
     require_once("email_verify/send_sms.php");
 
-    $_SESSION["user_phone"] = $row["user_phone"];
-
     //success
-    header("Location: ../authentication_insert_code.php");
+    header("Location: ../phone-verification-sms.php");
     exit();
 
 }

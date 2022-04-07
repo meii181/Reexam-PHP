@@ -9,7 +9,7 @@ $lang = $_GET["lang"] ?? "en";
     <h2>Phone number</h2>
     <p class="send">Verify your phone number here</p>
 
-    <form action="apis/api-verify-phone.php" method="post">
+    <form action="apis/api-verified-phone.php" method="post">
     <label>Phone</label>
     <input type="text" name="phone" placeholder="Type phone number">
     <label>Confirm your phone number</label>
