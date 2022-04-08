@@ -16,9 +16,14 @@ $lang = $_GET["lang"] ?? "en";
         <input type="text" name="last_name">
         <label>Email</label>
         <input type="text" name="email">
+        <label>Password</label>
+        <input type="password" name="pwd">
+        <label>Phone number</label>
+        <input type="text" name="phone">
 
         <?php
 if (isset ($_GET["error"])){
+
         if($_GET["error"] == "requiredname"){
                 echo "<p>Name is required!</p>";
         }
@@ -55,13 +60,19 @@ if (isset ($_GET["error"])){
                     echo "<p>Email is taken!</p>";
             }
 
+            else if ($_GET["error"] == "phoneistaken"){
+                    echo "<p>This phone number is taken, try another one!</p>";
+            } 
+
+            else if ($_GET["error"] == "phonemustbedanish"){
+                    echo "<p>The phone number must be in danish format!</p>";
+            }
+
             else if ($_GET["success"] == "informationupdatedsuccessfully"){
                     echo "<p>Your profile has been updated successfully!</p>";
             }
 }
         ?>
-
-        <p>Your phone number can be verified <a href="phone.php">here!</a></p>
         <button type="submit" name="update"><?= $text["26"][$lang]  ?></button>
 </form>
 <div>
