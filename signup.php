@@ -14,6 +14,8 @@ require_once(__DIR__."../globals.php");
         <input type="text" name="name">
         <label><?= $text["18"][$lang] ?></label>
         <input type="text" name="last_name">
+        <label>Nickname</label>
+        <input type="text" name="nickname">
         <label>Email</label>
         <input type="text" name="email">
         <label><?= $text["19"][$lang] ?></label>

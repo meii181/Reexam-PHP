@@ -35,6 +35,15 @@ else if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
     exit();
 }
 
+else if (!isset ($_POST["nickname"])){
+    header("Location: ../signup.php?error=requirednickname");
+    exit();
+}
+
+else if(strlen($_POST["nickname"]) < 5){
+    header("Location: ../signup.php?error=mincharacters_5");
+}
+
  else if(strlen($_POST["pwd"]) < _PASSWORD_MIN_LEN){
     header("Location:../signup.php?error=mincharacters_7");
     exit();
@@ -111,7 +120,7 @@ try{
         } else {
 
         $q = $db->prepare("INSERT INTO customers VALUES(:user_id, :user_name, :user_last_name, :user_email, 
-        :user_password, :phone_number, :verification_key, :forgotten_password, :verified_user)");
+        :user_password, :phone_number, :verification_key, :forgotten_password, :verified_user, :user_nickname)");
         
         $q->bindValue(":user_id", null);
         $q->bindValue(":user_name", $_POST["name"]);
@@ -122,6 +131,7 @@ try{
         $q->bindValue(":verification_key", $verification_key);
         $q->bindValue(":forgotten_password", $forgotten_password_key);
         $q->bindValue(":verified_user", false);
+        $q->bindValue(":user_nickname", $_POST["nickname"]);
         $q->execute();
 
         $id = $db->lastInsertId();

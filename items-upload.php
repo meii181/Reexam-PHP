@@ -18,9 +18,8 @@ $lang = $_GET["lang"] ?? "en";
     <input type="text" name="description" placeholder="Please describe your product here">
     <input type="file" name="image">  
 
-<button type="submit" name="submit-item"><?= $text['26'][$lang] ?></button>
+    <?php
 
-<?php
 if (isset($_GET["error"])){
     if($_GET["error"] == "nameismissing"){
         echo "<p>The name of the item is required!</p>";
@@ -43,6 +42,10 @@ if (isset($_GET["error"])){
     }
 }
 ?>
+
+<button type="submit" name="submit-item"><?= $text['26'][$lang] ?></button>
+
+<p><a href="../reexam/apis/api-update-item.php">Update your item here</a></p>
 
 </form>
 </div>
