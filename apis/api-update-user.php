@@ -10,7 +10,7 @@ if(!isset($_POST['name'])){
     exit();
 }
 
-else if(strlen($_POST['name']) < _NAME_MIN_LEN){
+if(strlen($_POST['name']) < _NAME_MIN_LEN){
     header("Location: ../profile.php?error=mincharacters_2");
     exit();
 }
@@ -92,7 +92,7 @@ try{
         $row = $q->fetch(); 
     
         if($row > 0){
-            header("Location:../signup.php?error=phoneistaken");
+            header("Location:../profile.php?error=phoneistaken");
             exit();
 
         } else {

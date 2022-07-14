@@ -36,7 +36,7 @@ if (isset ($_GET["error"])){
                 echo "<p>Email is required!</p>";
         }
 
-        else if($_GET["error"] == "invalidemail"){
+        if($_GET["error"] == "invalidemail"){
                 echo "<p>Please enter a valid email!</p>";
             }
 
@@ -68,12 +68,29 @@ if (isset ($_GET["error"])){
                     echo "<p>The phone number must be in danish format!</p>";
             }
 
-            else if ($_GET["success"] == "informationupdatedsuccessfully"){
-                    echo "<p>Your profile has been updated successfully!</p>";
+            else if ($_GET["error"] == "requiredphonenumber"){
+                echo "<p>Please enter your phone number</p>";
+        }
+
+            else if ($_GET["error"] == "mincharacters_7"){
+                    echo "<p>Password must be at least 7 characters!</p>";
             }
+
+            else if ($_GET["error"] == "maxcharacters_15"){
+                echo "<p>Password cannot be more than 15 characters!</p>";
+        }
 }
+
+if (isset ($_GET["success"])){
+           if ($_GET["success"] == "informationupdatedsuccessfully"){
+                echo "<p>Your profile has been updated successfully!</p>";
+        }
+}
+
         ?>
         <button type="submit" name="update"><?= $text["26"][$lang]  ?></button>
+
+        <p>Delete your account <a href="../reexam/apis/api-delete-user.php">here</a></p>
 </form>
 <div>
 

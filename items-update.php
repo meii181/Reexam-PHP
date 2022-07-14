@@ -9,9 +9,9 @@ $lang = $_GET["lang"] ?? "en";
 <h1><?= $text["48"][$lang] ?></h1>
 <p class="send"><?= $text["49"][$lang] ?></p>
 <form action="apis/api-update-item.php"> 
-<input type="text" name="item_name" data-validate="str" data-max="20" data-min="5" placeholder="<?= $text['50'][$lang] ?>">
-<input type="text" name="item_price" data-validate="str" data-max="20" data-min="2" placeholder="<?= $text['51'][$lang] ?>">
-<input type="text" name="item_description" data-validate="str" data-max="100" data-min="5" placeholder="<?= $text['52'][$lang] ?>">
+<input type="text" name="item_name" enctype="multipart/form-data" placeholder="<?= $text['50'][$lang] ?>">
+<input type="text" name="item_price" enctype="multipart/form-data" placeholder="<?= $text['51'][$lang] ?>">
+<input type="text" name="item_description" enctype="multipart/form-data" placeholder="<?= $text['52'][$lang] ?>">
 
 <button type="submit" name="item-upd"><?= $text["26"][$lang] ?></button>
 
